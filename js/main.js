@@ -893,7 +893,7 @@
     try {
       renderIdentity();
       renderNav();
-          renderSidebarFoot(); 
+      renderSidebarFoot(); 
       renderAbout();
       renderExperience();
       renderProjects();
