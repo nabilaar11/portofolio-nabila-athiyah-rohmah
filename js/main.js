@@ -780,27 +780,18 @@
     );
     root.appendChild(foot);
   }
-   function renderSidebarFoot() {
-  var foot = document.getElementById("sidebar-foot");
-  if (!foot || !DATA.profile) return;
+     /* ----------------------------------------------------------
+     RENDER: SIDEBAR FOOT (Built by only)
+     ---------------------------------------------------------- */
+  function renderSidebarFoot() {
+    var foot = document.getElementById("sidebar-foot");
+    if (!foot) return;
 
-  // About block — ambil 2 paragraf pertama saja biar ringkas
-  var about = el("div", { class: "sidebar-about" });
-  about.appendChild(el("h3", { class: "sidebar-about__title", text: "About" }));
-  var summary = DATA.profile.summary || [];
-  summary.slice(0, 2).forEach(function (para) {
-    about.appendChild(el("p", { text: para }));
-  });
-  foot.appendChild(about);
-
-  // Built by footer
-  foot.appendChild(
-    el("p", {
-      class: "sidebar-foot__text",
-      text: "Built by Nabila with vanilla HTML, CSS and JS · © " + new Date().getFullYear(),
-    })
-  );
-}
+    var footText = document.createElement("p");
+    footText.className = "sidebar-foot__text";
+    footText.textContent = "Built by Nabila with vanilla HTML, CSS and JS · © " + new Date().getFullYear();
+    foot.appendChild(footText);
+  }
 
   /* ----------------------------------------------------------
      SCROLL-SPY + REVEAL + SPOTLIGHT
