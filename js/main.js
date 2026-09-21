@@ -225,13 +225,13 @@
   function renderNav() {
     var nav = document.getElementById("nav");
     if (!nav) return;
-    var items = [
-      { href: "#about", label: "About" },
-      { href: "#experience", label: "Experience" },
-      { href: "#projects", label: "Projects" },
-      { href: "#gallery", label: "Gallery" },
-      { href: "#articles", label: "Articles" },
-    ];
+  var items = [
+  { href: "#about-root", label: "About" },
+  { href: "#experience-root", label: "Experience" },
+  { href: "#projects-root", label: "Projects" },
+  { href: "#gallery-root", label: "Gallery" },
+  { href: "#articles-root", label: "Articles" },
+];       
     var ul = el("ul", { class: "nav__list" });
     items.forEach(function (it) {
       var li = el("li");
@@ -780,6 +780,27 @@
     );
     root.appendChild(foot);
   }
+   function renderSidebarFoot() {
+  var foot = document.getElementById("sidebar-foot");
+  if (!foot || !DATA.profile) return;
+
+  // About block — ambil 2 paragraf pertama saja biar ringkas
+  var about = el("div", { class: "sidebar-about" });
+  about.appendChild(el("h3", { class: "sidebar-about__title", text: "About" }));
+  var summary = DATA.profile.summary || [];
+  summary.slice(0, 2).forEach(function (para) {
+    about.appendChild(el("p", { text: para }));
+  });
+  foot.appendChild(about);
+
+  // Built by footer
+  foot.appendChild(
+    el("p", {
+      class: "sidebar-foot__text",
+      text: "Built by Nabila with vanilla HTML, CSS and JS · © " + new Date().getFullYear(),
+    })
+  );
+}
 
   /* ----------------------------------------------------------
      SCROLL-SPY + REVEAL + SPOTLIGHT
@@ -872,6 +893,7 @@
     try {
       renderIdentity();
       renderNav();
+          renderSidebarFoot(); 
       renderAbout();
       renderExperience();
       renderProjects();
