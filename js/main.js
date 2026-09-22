@@ -226,12 +226,14 @@
     var nav = document.getElementById("nav");
     if (!nav) return;
   var items = [
-  { href: "#about-root", label: "About" },
-  { href: "#experience-root", label: "Experience" },
-  { href: "#projects-root", label: "Projects" },
-  { href: "#gallery-root", label: "Gallery" },
-  { href: "#articles-root", label: "Articles" },
-];       
+     var items = [
+      { href: "#about-root", label: "About" },
+      { href: "#education-root", label: "Education" },
+      { href: "#experience-root", label: "Experience" },
+      { href: "#projects-root", label: "Projects" },
+      { href: "#gallery-root", label: "Gallery" },
+      { href: "#articles-root", label: "Articles" },
+    ];     
     var ul = el("ul", { class: "nav__list" });
     items.forEach(function (it) {
       var li = el("li");
@@ -302,6 +304,30 @@
       strip.appendChild(evidenceWrap);
       root.appendChild(strip);
     }
+  }
+  /* ----------------------------------------------------------
+     RENDER: EDUCATION
+     ---------------------------------------------------------- */
+  function renderEducation() {
+    var root = document.getElementById("education-root");
+    if (!root || !DATA.education) return;
+
+    root.appendChild(
+      el("h2", { class: "section__title", id: "education-title", text: "🎓 Education" })
+    );
+
+    var wrap = el("div", { class: "education-list" });
+    DATA.education.forEach(function (edu) {
+      var card = el("div", { class: "education-card reveal" });
+      card.appendChild(el("h3", { class: "education-card__degree", text: edu.degree }));
+      var metaParts = [];
+      if (edu.institution) metaParts.push(edu.institution);
+      if (edu.period) metaParts.push(edu.period);
+      if (edu.location) metaParts.push(edu.location);
+      card.appendChild(el("p", { class: "education-card__meta", text: metaParts.join(" · ") }));
+      wrap.appendChild(card);
+    });
+    root.appendChild(wrap);
   }
 
   /* ----------------------------------------------------------
@@ -886,6 +912,7 @@
       renderNav();
       renderSidebarFoot(); 
       renderAbout();
+      renderEducation();
       renderExperience();
       renderProjects();
       renderGallery();
