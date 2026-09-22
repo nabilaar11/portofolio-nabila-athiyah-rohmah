@@ -274,7 +274,20 @@ window.PORTFOLIO = {
     { name: "AI Engineer for Millenial", issuer: "Komdigi", image: "assets/images/certs/komdigi-ai-engineer.jpg", caption: "AI Engineer for Millenial – Komdigi" },
     { name: "Social Media Management for Digital Brand", issuer: "Komdigi", image: "assets/images/certs/komdigi-smm-digital-brand.jpg", caption: "Social Media Management for Digital Brand – Komdigi" }
   ],
-
+  education: [
+    {
+      degree: "Bachelor of Political Science (B.A)",
+      institution: "Airlangga University",
+      period: "2022 – 2026",
+      location: "Surabaya, Indonesia"
+    },
+    {
+      degree: "Bachelor of Law (LL.B)",
+      institution: "Indonesia Open University",
+      period: "2023 – 2027",
+      location: "Indonesia"
+    }
+  ],
   articles: [
     { title: "Selangkah Menuju Pilpres 2024: Opini Refleksi Politik Indonesia", type: "Opinion", source: "Kompasiana", url: "https://www.kompasiana.com/nabilaathiyah/646bac5f37cb2a259d73a852/selangkah-menuju-pilpres-2024-opini-refleksi-politik-indonesia" },
     { title: "UNAIR Students Win Silver Medal at IYS 2024 International Essay Competition", type: "News", source: "UNAIR (EN)", url: "https://unair.ac.id/en/unair-students-win-silver-medal-at-iys-2024-international-essay-competition/" },
