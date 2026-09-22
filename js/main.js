@@ -225,7 +225,8 @@
   function renderNav() {
     var nav = document.getElementById("nav");
     if (!nav) return;
-  var items = [
+     
+
      var items = [
       { href: "#about-root", label: "About" },
       { href: "#education-root", label: "Education" },
