@@ -418,13 +418,13 @@
 
       // sort by role score desc (stable)
       var sorted = cards.slice().sort(function (a, b) {
-        var sa = Number(a.dataset["score" + key.toLowerCase()] || 0);
-var sb = Number(b.dataset["score" + key.toLowerCase()] || 0);
+        var sa = Number(a.dataset["score" + key] || 0);
+        var sb = Number(b.dataset["score" + key] || 0);
         if (sb !== sa) return sb - sa;
         return Number(a.dataset.idx) - Number(b.dataset.idx);
       });
       sorted.forEach(function (c) {
-        var sc = Number(c.dataset["score" + key.toLowerCase()] || 0);
+        var sc = Number(c.dataset["score" + key] || 0);
         if (sc <= 2) c.classList.add("is-dimmed");
         // add fit badge
         var badge = el("span", {
@@ -453,10 +453,11 @@ var sb = Number(b.dataset["score" + key.toLowerCase()] || 0);
       "data-idx": String(idx),
     });
     // attach role scores as data attributes
-       if (exp.scores) {
+    if (exp.scores) {
       Object.keys(exp.scores).forEach(function (k) {
-  card.dataset["score" + k.toLowerCase()] = String(exp.scores[k]);
-});
+        card.setAttribute("data-score" + k, String(exp.scores[k]));
+      });
+    }
 
     var head = el("div", { class: "exp-card__head" });
     head.appendChild(el("h3", { text: exp.title }));
