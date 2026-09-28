@@ -286,6 +286,18 @@ window.PORTFOLIO = {
       institution: "Indonesia Open University",
       period: "2023 – 2027",
       location: "Indonesia"
+    },
+        {
+      degree: "Bachelor of Applied Science — Biodiversity Conservation and Management (Honours)",
+      institution: "Universiti Malaysia Terengganu",
+      period: "Jul 2025 – Aug 2025",
+      location: "Kuala Terengganu, Malaysia"
+    },
+    {
+      degree: "Faculty of Social and Political Science — Leadership Program",
+      institution: "Universitas Gadjah Mada",
+      period: "Mar 2024 – Jun 2024",
+      location: "Yogyakarta, Indonesia"
     }
   ],
   articles: [
